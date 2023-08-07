@@ -88,3 +88,4 @@ def dfs(graph, start, end):
 # print (dfs(graph_1, 'S', 'G'))
 print (dfs(graph_2, 's', 'g'))
 # print (dfs(graph_3, 'A', 'G'))
+print (dfs(graph_Ex, '1', '11'))

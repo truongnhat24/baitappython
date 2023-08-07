@@ -89,3 +89,4 @@ def bfs(graph, start, end):
 print (bfs(graph_1, 'S', 'G'))
 print (bfs(graph_2, 's', 'g'))
 print (bfs(graph_3, 'A', 'G'))
+print (bfs(graph_Ex, '1', '11'))
