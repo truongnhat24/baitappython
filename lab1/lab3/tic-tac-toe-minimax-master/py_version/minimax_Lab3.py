@@ -249,6 +249,14 @@ def human_turn(c_choice, h_choice):
         except (KeyError, ValueError):
             print('Bad choice')
 
+def input_initial_state():
+    print("Enter the initial state of the board:")
+    initial_state = []
+    for _ in range(3):
+        row = input("Enter a row (e.g., 'XOX'): ").upper()
+        initial_row = [cell if cell in ['X', 'O'] else ' ' for cell in row]
+        initial_state.append(initial_row)
+    return initial_state
 
 def main():
     """
@@ -276,6 +284,7 @@ def main():
     else:
         c_choice = 'X'
 
+
     # Human may starts first
     clean()
     while first != 'Y' and first != 'N':
@@ -286,7 +295,11 @@ def main():
             exit()
         except (KeyError, ValueError):
             print('Bad choice')
-
+            
+    if first == 'N':
+        initial_state = input_initial_state()
+        board = initial_state
+        
     # Main loop of this game
     while len(empty_cells(board)) > 0 and not game_over(board):
         if first == 'N':
